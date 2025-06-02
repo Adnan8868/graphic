@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d0d0d" />
+
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+    <title>A.Graphic Designer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            background: rgb(160, 1, 1);
+            color: black;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .project-card {
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* CSS for making the image circular */
+        .navbar-brand img {
+            width: 40px;
+            /* Adjust the size of the image */
+            height: 40px;
+            border-radius: 50%;
+            /* This will make the image circular */
+            margin-right: 25px;
+            /* Space between image and text */
+        }
+
+        .container_0 a {
+            margin-right: 15px;
+            color: white;
+            /* optional: white text for navbar-dark */
+            text-decoration: none;
+            /* optional: remove underline */
+        }
+
+        .project-card img {
+            height: 200px;
+            /* Ya jo bhi height aap chahen */
+            object-fit: cover;
+            /* Image ko crop karega taake full area cover kare */
+            width: 100%;
+        }
+    </style>
+    <link rel="manifest" href="manifest.json" />
+
+</html>
+</head>
+
+</html>
+
+<body>
+    <!-- Hidden H1 for SEO -->
+    <h1 style="display: none;">PWA means Portfolio With Adnan – Personal Web Portfolio</h1>
+
+    <!-- ✅ New Intro Section -->
+    <section id="intro" style="text-align: center; padding: 2rem;">
+        <h2>Welcome to A.Graphic Designer – <span style="color:#00ffcc;">Learn With AK</span></h2>
+        <p style="max-width: 600px; margin: 0 auto;">
+            This is my personal digital space to showcase my work, skills, and passion for Graphic Designer.
+            "LWAK" is not just a tech term — it's my identity as a creator.
+        </p>
+    </section>
+
+    <!-- Your existing content continues... -->
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log('✅ Service Worker Registered'));
+        }
+    </script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- Portfolio text and image -->
+            <a class="navbar-brand" href="#">
+                <img src="Portfolio.jpg" alt="Portfolio Image">
+                My Website.
+            </a>
+
+            <div class="container_0">
+                <li class="nav_item">
+                    <a href="contact.html">Contact Us</a>
+                    <a href="location.html">Location</a>
+                </li>
+            </div>
+        </div>
+
+
+    </nav>
+
+    <section class="class">
+        <div class="container">
+            <h3>Success is not a destination it's a journay.</h3>
+        </div>
+    </section>
+
+
+    <section class="class">
+        <div class="container">
+            <h3>Orignality makes a man perfect.
+            </h3>
+            <p>Writes By Ali Akbar.</p>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="container">
+            <h1 id="typewriter-text"></h1>
+            <p>Graphic Designer | MS Office Expert | Tele Marketing | YouTube Monotization | Singer</p>
+        </div>
+    </section>
+
+    <script>
+        const textElement = document.getElementById("typewriter-text");
+        const message = "Asslamualikum , I'm Ali Akbar";
+        let charIndex = 0;
+        let typing;
+
+        function typeWriter() {
+            if (charIndex < message.length) {
+                textElement.innerHTML += message.charAt(charIndex);
+                charIndex++;
+                typing = setTimeout(typeWriter, 150);
+            } else {
+                // Wait 2 seconds, then erase
+                setTimeout(() => {
+                    eraseText();
+                }, 2000);
+            }
+        }
+
+        function eraseText() {
+            if (charIndex > 0) {
+                textElement.innerHTML = message.substring(0, charIndex - 1);
+                charIndex--;
+                typing = setTimeout(eraseText, 100);
+            } else {
+                setTimeout(typeWriter, 500);
+            }
+        }
+
+        function startTypingEffect() {
+            clearTimeout(typing);
+            charIndex = 0;
+            textElement.innerHTML = '';
+            typeWriter();
+        }
+
+        document.addEventListener("DOMContentLoaded", startTypingEffect);
+
+        document.addEventListener("visibilitychange", function () {
+            if (document.visibilityState === "visible") {
+                startTypingEffect();
+            }
+        });
+    </script>
+
+
+
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4">About Me</h2>
+        <p class="text-center">I am a multi-talented professional with expertise in Graphic Designing, MS Office,
+            Telemarketing, and YouTube Monetization, along with a passion for singing. With a creative mind and strong
+            communication skills, I thrive in both digital and client-facing roles. Whether it's creating eye-catching
+            designs, managing professional documents, boosting sales through telemarketing, or helping YouTube channels
+            grow and monetize — I bring dedication and a results-driven approach to every task. My versatility allows me
+            to adapt to different industries and contribute effectively to team and individual projects.</p>
+
+        <div class="text-center mt-3">
+            <a href="CV.pdf" class="btn btn-primary" download>Download My CV</a>
+        </div>
+    </section>
+
+    <section class="container my-5">
+        <h2 class="text-center mb-4">My Projects</h2>
+        <div class="row">
+            <!-- Project 3: Now appears first -->
+            <div class="row">
+                <!-- Repeat this block for each image -->
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="VU Official/1 Welcome New Students.png" class="card-img-top" alt="Image 1">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 1</h5>
+                            <a href="VU Official/1 Welcome New Students.png" target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="VU Official/2 VU Moto.jpg" class="card-img-top" alt="Image 2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 2</h5>
+                            <a href="VU Official/2 VU Moto.jpg" target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="VU Official/3 Campus vu pbrw01 Logo.jpg" class="card-img-top" alt="Image 3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 3</h5>
+                            <a href="VU Official/3 Campus vu pbrw01 Logo.jpg" target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="VU Official/4 Murre Tour.jpg" class="card-img-top" alt="Image 4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 4</h5>
+                            <a href="VU Official/4 Murre Tour.jpg" target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="VU Official/5 My Main Logo Campus vu PBRW01.jpg" class="card-img-top" alt="Image 5">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 5</h5>
+                            <a href="VU Official/5 My Main Logo Campus vu PBRW01.jpg" target="_blank"
+                                class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="VU Official/6 OfficialVU LOGO.jpg" class="card-img-top" alt="Image 6">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 6</h5>
+                            <a href="VU Official/6 OfficialVU LOGO.jpg" target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="VU Official/7 Happy New Year.png" class="card-img-top" alt="Image 7">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 7</h5>
+                            <a href="VU Official/7 Happy New Year.png" target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="VU Official/8 Vu Admissions Open Official.jpg" class="card-img-top" alt="Image 8">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 8</h5>
+                            <a href="VU Official/8 Vu Admissions Open Official.jpg" target="_blank"
+                                class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="VU Official/pngtree-reading-books-icon-vector-png-image_6653519.png"
+                            class="card-img-top" alt="Image 9">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 9</h5>
+                            <a href="VU Official/pngtree-reading-books-icon-vector-png-image_6653519.png"
+                                target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="DREAM.png" class="card-img-top" alt="Image 10">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 10</h5>
+                            <a href="DREAM.png" target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="LOVE AT FISRT SIGHT 1ONE SONG  TO PROMOTE VU  TO PROMOTE LOVE INSHALLAH 1 Full.jpg"
+                            class="card-img-top" alt="Image 11">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 11</h5>
+                            <a href="LOVE AT FISRT SIGHT 1ONE SONG  TO PROMOTE VU  TO PROMOTE LOVE INSHALLAH 1 Full.jpg"
+                                target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="P1.png" class="card-img-top" alt="Image 12">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 12</h5>
+                            <a href="P1.png" target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="p2.png" class="card-img-top" alt="Image 13">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 13</h5>
+                            <a href="p2.png" target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <img src="WELCOME CREATIVE  ACADEMY.png" class="card-img-top" alt="Image 14">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Image 14</h5>
+                            <a href="WELCOME CREATIVE  ACADEMY.png" target="_blank" class="btn btn-primary">
+                                Open It
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat for images 3 to 12... -->
+            </div>
+
+            <!-- Contact Us Section -->
+            <!-- Add this in <head> if not already included -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+            <!-- Contact Section -->
+            <section class="container my-5 text-center" id="contact">
+                <h2 class="mb-4">Contact Me</h2>
+                <p>You can reach out to me via WhatsApp or Email anytime!</p>
+
+                <!-- WhatsApp Button -->
+                <div class="mt-4">
+                    <a href="https://wa.me/923078633742?text=Asslamualikum%20Ali Akbar%2C%20I%20want%20to%20connect%20with%20you!"
+                        target="_blank" class="btn btn-success">
+                        <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+                    </a>
+                    <h5>
+                        WhatsApp 📲 : 03078633742
+                    </h5>
+                    <h5>
+                        Cell NO. 📞 : 03208649567
+                    </h5>
+                </div>
+
+                <!-- Gmail Button (next line) -->
+                <div class="mt-3">
+                    <a href="mailto:aliakbar475ali@gmail.com" class="btn btn-danger">
+                        <i class="bi bi-envelope-fill"></i> Email Me
+                    </a>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-dark text-white text-center py-4">
+                <div class="container">
+                    <p class="mb-1">© 2025 Adnan. All Rights Reserved.</p>
+                    <p class="mb-0">Designed with ❤️ by Adnan</p>
+                </div>
+            </footer>
+
+            <script>
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('service-worker.js')
+                        .then(() => console.log('✅ Service Worker Registered'));
+                }
+            </script>
+        </div>
+    </section>
+</body>
